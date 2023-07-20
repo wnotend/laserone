@@ -1,5 +1,59 @@
 // Add your code here
 
+{/* <li class="services__list-item">
+<div class="services__check"></div>
+<p class="services__name">Ореолы</p> 
+<div class="services__price"> 490р.</div>
+</li> */}
+
+let makeElement = function (name, price) {
+  let block = document.createElement('li');
+  block.classList.add('services__list-item');
+
+  let divCheck = document.createElement('div');
+  divCheck.classList.add('services__check');
+
+  let pName = document.createElement('p');
+  pName.classList.add('services__name');
+  pName.textContent = name;
+
+  let divPrice = document.createElement('div');
+  divPrice.classList.add('services__price');
+  divPrice.textContent = price + 'р.';
+
+  block.append(divCheck);
+  block.append(pName);
+  block.append(divPrice);
+
+  return block;
+}
+
+let list_prices = [{ name: "Над губой", price: 400},
+                   { name: "Подбородок", price: 500}, 
+                   { name: "Бакенбарды", price: 500},
+                   { name: "Лицо полностью", price: 1200},
+                   { name: "Подмышки", price: 590},
+                   { name: "Руки до/выше локтя", price: 890},
+                   { name: "Руки полностью", price: 1290},
+                   { name: "Ореолы", price: 490},
+                   { name: "Живот", price: 890},
+                   { name: "Бикини", price: 790},
+                   { name: "Глубокое бикини", price: 1290},
+                   { name: "Тотальное бикини", price: 1490},
+                   { name: "Ягодицы", price: 990},
+                   { name: "Поясница", price: 790},
+                   { name: "Ноги до/выше колен", price: 1390},
+                   { name: "Ноги полностью", price: 2490},
+                   { name: "Пальцы ног", price: 290}]
+
+
+let servicesList = document.querySelector('.services__list');
+
+for (let price of list_prices) {
+  let e = makeElement(price.name, price.price) 
+  servicesList.appendChild(e);
+
+}
 
 let coeff = 0.5;
 let checked = document.querySelectorAll('.services__list-item');
@@ -58,7 +112,7 @@ btnGoToForm.addEventListener('click', () => {
   wrapper.classList.toggle('none');
   save.classList.remove('none')
   btnGoToForm.classList.add('none')
-  sectionSummary.style.position = 'static';
+  // sectionSummary.style.position = 'static';
   sectionSummary.style.height = 'auto';
 })
 
