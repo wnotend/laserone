@@ -112,8 +112,8 @@ btnGoToForm.addEventListener('click', () => {
   wrapper.classList.toggle('none');
   save.classList.remove('none')
   btnGoToForm.classList.add('none')
-  // sectionSummary.style.position = 'static';
   sectionSummary.style.height = 'auto';
+  document.querySelector('body').style.backgroundSize = "auto";
 })
 
 close.addEventListener('click', () => {
@@ -123,6 +123,7 @@ close.addEventListener('click', () => {
   btnGoToForm.classList.remove('none')
   sectionSummary.style.position = 'fixed';
   sectionSummary.style.height = '376px';
+  document.querySelector('body').style.backgroundSize = "cover";
 })
 
 // tg bot
