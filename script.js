@@ -73,13 +73,11 @@ save.addEventListener ('click', () => {
 })
 
 // tg bot
-
- let tg = window.Telegram.WebApp;
-      let save = document.querySelector('#save');
+let tg = window.Telegram.WebApp;
       
-      tg.expand();
+tg.expand();
       
-      save.addEventListener('click', () => {
+save.addEventListener('click', () => {
         
         let name = document.querySelector('#name').value;
         let phone = document.querySelector('#phone').value;
@@ -95,4 +93,4 @@ save.addEventListener ('click', () => {
 
         tg.close();
         
-      });
+});
