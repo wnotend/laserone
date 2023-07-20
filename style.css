@@ -38,6 +38,7 @@ body {
   background-color: #fff;
   opacity: 0.8;
   color: #111111;
+  margin-bottom: 15px;
 }
 
 .services {
@@ -66,7 +67,16 @@ body {
   opacity: 1;
 }
 
-.services__name{
+.services__list-item--combo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.services__name {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -91,6 +101,28 @@ body {
   margin-left: auto;
 }
 
+.services__price-combo {
+  min-width: 70px;
+  max-width: 70px;
+  text-align: center;
+  padding: 5px;
+  background-color: #fd82b1;
+  /* border: 1px solid #fd82b1; */
+  color: aliceblue;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.abonement-price {
+  text-align: center;
+  max-width: none;
+  width: 80%;
+  font-size: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
 .services__check {
   /* border: 1px solid #fd82b1; */
   width: 40px;
@@ -102,6 +134,21 @@ body {
   /* background-color: #fd82b1; */
   background: url(check.png);
   background-size: 40px 40px;
+}
+
+.wrapper-abonement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.wrapper-abonement__text {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 18px;
 }
 
 .section-summary {
@@ -216,6 +263,15 @@ input {
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   cursor: pointer;
+}
+
+.label {
+  margin-top: 30px;
+}
+
+#promo {
+  margin-top: 15px;
+  margin-bottom: 30px;
 }
 
 .none {

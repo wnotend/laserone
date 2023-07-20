@@ -6,9 +6,16 @@
 <div class="services__price"> 490р.</div>
 </li> */}
 
-let makeElement = function (name, price) {
+// type_service: price, combo
+
+let makeElement = function (name, price, type_service) {
   let block = document.createElement('li');
   block.classList.add('services__list-item');
+
+  if (type_service == 'combo') {
+    block.classList.add('services__list-item--combo');
+    
+  }
 
   let divCheck = document.createElement('div');
   divCheck.classList.add('services__check');
@@ -16,9 +23,13 @@ let makeElement = function (name, price) {
   let pName = document.createElement('p');
   pName.classList.add('services__name');
   pName.textContent = name;
-
   let divPrice = document.createElement('div');
-  divPrice.classList.add('services__price');
+  if (type_service == 'price') {
+    divPrice.classList.add('services__price');
+  }
+  if (type_service == 'combo'){
+    divPrice.classList.add('services__price-combo');
+  }
   divPrice.textContent = price + 'р.';
 
   block.append(divCheck);
@@ -31,7 +42,6 @@ let makeElement = function (name, price) {
 let list_prices = [{ name: "Над губой", price: 400},
                    { name: "Подбородок", price: 500}, 
                    { name: "Бакенбарды", price: 500},
-                   { name: "Лицо полностью", price: 1200},
                    { name: "Подмышки", price: 590},
                    { name: "Руки до/выше локтя", price: 890},
                    { name: "Руки полностью", price: 1290},
@@ -44,19 +54,35 @@ let list_prices = [{ name: "Над губой", price: 400},
                    { name: "Поясница", price: 790},
                    { name: "Ноги до/выше колен", price: 1390},
                    { name: "Ноги полностью", price: 2490},
-                   { name: "Пальцы ног", price: 290}]
+                   { name: "Пальцы ног", price: 290}
+                  ]
+
+let list_combo_prices = [{ name: "Лицо полностью", price: 1200},
+                         { name: "Бикини + подмышки", price: 1290},
+                         { name: "Тотальное бикини + подмышки", price: 1690},
+                         { name: "Глубокое бикини + подмышки + ноги до/выше колена", price: 2890},
+                         { name: "Глубокое бикини + подмышки + ноги полностью", price: 3690},
+                         { name: "Глубокое бикини + подмышки + ноги полностью + руки полностью", price: 4490},
+                         { name: "Всё тело", price: 6990}
+                        ]
 
 
-let servicesList = document.querySelector('.services__list');
+let servicesList = document.querySelectorAll('.services__list');
 
 for (let price of list_prices) {
-  let e = makeElement(price.name, price.price) 
-  servicesList.appendChild(e);
-
+  let e = makeElement(price.name, price.price, 'price') 
+  servicesList[0].appendChild(e);
 }
 
-let coeff = 0.5;
+for (let price of list_combo_prices) {
+  let e = makeElement(price.name, price.price, 'combo') 
+  servicesList[1].appendChild(e);
+}
+
+let first_coeff = 0.5;
+let invitation_coeff = 0.3;
 let checked = document.querySelectorAll('.services__list-item');
+let checkedCombo = document.querySelectorAll('.services__list-item--combo');
 let checked_toogle = document.querySelectorAll('.services__check');
 let prices = document.querySelectorAll('.services__price');
 let resultWithout = document.querySelector('.result-without');
@@ -70,6 +96,7 @@ let show_result = function() {
   result.textContent = endTotal + 'р.';
 
 }
+
 
 for (let i = 0; i < checked.length; i++) {
   checked[i].addEventListener('click', function()  {
@@ -89,9 +116,9 @@ for (let i = 0; i < checked.length; i++) {
       total += Number(current_price);
       checked[i].classList.add('services__list-item--opacity');
       
-    }
+  }
   
-    endTotal = total * coeff;
+    endTotal = total * first_coeff;
     show_result();
 
 
