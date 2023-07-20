@@ -64,12 +64,6 @@ close.addEventListener('click', () => {
 });
 
 
-let promo = document.querySelector('#promo');
-
-save.addEventListener ('click', () => {
-  alert(promo.value)
-});
-
 // tg bot
 
 let tg = window.Telegram.WebApp;
