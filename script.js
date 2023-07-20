@@ -1,3 +1,5 @@
+// Add your code here
+
 
 let coeff = 0.5;
 let checked = document.querySelectorAll('.services__list-item');
@@ -54,6 +56,8 @@ btnGoToForm.addEventListener('click', () => {
   wrapper.classList.toggle('none');
   save.classList.remove('none')
   btnGoToForm.classList.add('none')
+  sectionSummary.style.position = 'static';
+  sectionSummary.style.height = 'auto';
 })
 
 close.addEventListener('click', () => {
@@ -61,17 +65,17 @@ close.addEventListener('click', () => {
   wrapper.classList.toggle('none');
   save.classList.add('none')
   btnGoToForm.classList.remove('none')
-});
-
+  sectionSummary.style.position = 'fixed';
+  sectionSummary.style.height = '376px';
+})
 
 // tg bot
-
 let tg = window.Telegram.WebApp;
-
       
 tg.expand();
       
-save.addEventListener('click', () => {    
+save.addEventListener('click', () => {
+        
         let name = document.querySelector('#name').value;
         let phone = document.querySelector('#phone').value;
         let promo = document.querySelector('#promo').value;
@@ -81,6 +85,9 @@ save.addEventListener('click', () => {
           phone: phone,
           promo: promo
         }
+
         tg.sendData(JSON.stringify(data));
-        tg.close();        
+
+        tg.close();
+        
 });
