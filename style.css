@@ -95,7 +95,7 @@ body {
 
 .check-selected {
   /* background-color: #fd82b1; */
-  background: url(../check.png);
+  background: url('check.png');
   background-size: 40px 40px;
 }
 
