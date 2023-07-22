@@ -10,6 +10,31 @@
     <div class="wrapper"> 
       <div class="services">
           <div class="container">
+            <div class="wrapper-visit"> 
+              <h3 class="services-title" style="margin-bottom: 0px"> КАЛЬКУЛЯТОР РАСЧЕТА СТОИМОСТИ </h3>
+              <ul class="visit"> 
+                  <li class="visit-list__item">
+                    <div id="first-check-visit" class="visit__check"></div>
+                    <div class="title__visit">
+                      Первое посещение - 50%
+                    </div> 
+                  </li>
+                  <li class="visit-list__item">
+                    <div id="second-check-visit" class="visit__check"></div>
+                    <div class="title__visit">
+                      Второе посещение - 30%
+                    </div> 
+                  </li>
+                  <li class="visit-list__item">
+                    <div id="third-check-visit" class="visit__check"></div>
+                    <div class="title__visit">
+                      Третье посещение - 10%
+                    </div> 
+                  </li>
+ 
+      
+                </ul>
+          </div>
           <h3 class="services-title"> ПРАЙС ЛИСТ </h3>
           <ul class="services__list"> 
           <!-- template -->
@@ -27,6 +52,7 @@
           </ul>
           <h3 class="services-title"> КОМБО </h3>
           <ul class="services__list"> 
+          </ul>
         </div>
         <div class="wrapper-abonement"> 
           <h3 class="services-title"> ГОДОВОЙ АБОНЕМЕНТ </h3>
@@ -56,14 +82,23 @@
       <div class="section-summary">
           <!-- <div class="none"> -->
             <div class="container">
-              <div class="cal">
-                <div class="result-name"> Итоговая стоимость: </div>
-                <div class="result-without margin-right-10px"> 0 р.</div>
-                <div class="result-name"> C учетом скидки: </div>
-              <div class="result margin-right-10px"> 0 р.</div>
+              <div class="calc">
+                <div class="calc__row">
+                  <p><b>Введите вашу накопительную скидку:</b></p>
+                  <input id="coeff" name="coeff" type="tel" maxlength="2" autocomplete="off"> 
+                  <p>%</p>
+                </div>
+                <div class="calc__row">
+                  <div class="result-name"> Итоговая стоимость: </div>
+                  <div class="result-without margin-right-10px"> 0 р.</div>
+                  <div class="result-name"> C учетом скидки: </div>
+                  <div class="result margin-right-10px"> 0 р.</div>
+                </div>
+                <div class="calc_row">
+                  <div id="go_to_form" class="btn">Записаться</div>
+                  <div id="save" class="none"> Отправить </div>
+                </div>
             </div>
-          <div id="go_to_form" class="btn">Записаться</div>
-          <div id="save" class="none"> Отправить </div>
         </div>
       </div>
       <!-- // fixed section-summary -->
