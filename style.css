@@ -170,7 +170,7 @@ body {
   /* border-top: 1px solid #fd82b1; */
   /* background-color: rgb(247, 242, 248); */
   position: fixed;
-  top: calc(100% - 50px);
+  top: calc(100% - 100px);
   padding: 15px;
 }
 
